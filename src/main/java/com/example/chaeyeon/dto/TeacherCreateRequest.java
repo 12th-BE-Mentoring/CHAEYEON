@@ -1,0 +1,13 @@
+package com.example.chaeyeon.dto;
+
+import lombok.Getter;
+
+@Getter
+public class TeacherCreateRequest {
+
+    private String name;
+    private String subject;
+    private String phone;
+
+
+}
