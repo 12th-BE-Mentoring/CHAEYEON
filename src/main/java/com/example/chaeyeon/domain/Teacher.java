@@ -1,4 +1,4 @@
-package com.example.chaeyeon;
+package com.example.chaeyeon.domain;
 
 import jakarta.persistence.*;
 

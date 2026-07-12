@@ -1,9 +1,10 @@
-package com.example.chaeyeon.dto;
+package com.example.chaeyeon.dto.request;
 
 import lombok.Getter;
 
 @Getter
 public class StudentCreateRequest {
+
 
     private String name;
 

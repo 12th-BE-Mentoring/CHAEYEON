@@ -2,8 +2,8 @@ package com.example.chaeyeon.service;
 
 import com.example.chaeyeon.domain.Student;
 import com.example.chaeyeon.domain.Teacher;
-import com.example.chaeyeon.dto.StudentCreateRequest;
-import com.example.chaeyeon.dto.TeacherCreateRequest;
+import com.example.chaeyeon.dto.request.StudentCreateRequest;
+import com.example.chaeyeon.dto.request.TeacherCreateRequest;
 import com.example.chaeyeon.repository.StudentRepository;
 import com.example.chaeyeon.repository.TeacherRepository;
 import org.springframework.stereotype.Service;

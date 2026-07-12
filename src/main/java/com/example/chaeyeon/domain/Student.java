@@ -1,4 +1,4 @@
-package com.example.chaeyeon;
+package com.example.chaeyeon.domain;
 
 import jakarta.persistence.*;
 
@@ -10,6 +10,18 @@ public class Student {
     private Long id;
 
     private String name; //이름
+
+    public Student(String name, int grade, int classNumber, int studentNumber, String phone) {
+        this.name = name;
+        this.grade = grade;
+        this.classNumber = classNumber;
+        this.studentNumber = studentNumber;
+        this.phone = phone;
+    }
+
+    public Student() {
+
+    }
 
     public String getPhone() {
         return phone;
@@ -42,6 +54,7 @@ public class Student {
 
     private String phone; // 전화번호
 
+
     @ManyToOne
     @JoinColumn(name = "teacher_id")
     private Teacher homeroomTeacher; // 담임 선생남
@@ -50,9 +63,6 @@ public class Student {
         return homeroomTeacher;
     }
 
-    public Student() {
-
-    }
 
     public Student(String name, int grade, int classNumber, int studentNumber, String phone, Teacher teacher) {
         this.name = name;
