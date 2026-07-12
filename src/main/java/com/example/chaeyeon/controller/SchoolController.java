@@ -38,7 +38,7 @@ public class SchoolController {
 
     }
 
-    @PostMapping("/teacher")
+    @PostMapping("/teachers")
     @ResponseStatus(HttpStatus.CREATED) // 해당 요청이 끝났을 때 프론트에 보낼 상태코드 강제
     public TeacherCreateResponse CreateTeacher(@RequestBody TeacherCreateRequest request){
 
