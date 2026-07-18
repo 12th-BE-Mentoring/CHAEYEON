@@ -1,11 +1,15 @@
 package com.example.chaeyeon.domain;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Getter
+@NoArgsConstructor
 public class Teacher {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,29 +21,6 @@ public class Teacher {
 
     @OneToMany(mappedBy = "homeroomTeacher")
     private List<Student> students = new ArrayList<>();
-
-    public Teacher() {
-    }
-
-    public List<Student> getStudents() {
-        return students;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Long getId() {
-        return id;
-    }
 
     public Teacher(String name, String subject, String phone) {
         this.name = name;
