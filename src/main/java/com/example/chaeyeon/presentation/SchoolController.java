@@ -1,10 +1,10 @@
-package com.example.chaeyeon.controller;
+package com.example.chaeyeon.presentation;
 
-import com.example.chaeyeon.dto.request.StudentCreateRequest;
-import com.example.chaeyeon.dto.request.TeacherCreateRequest;
-import com.example.chaeyeon.dto.response.StudentCreateResponse;
-import com.example.chaeyeon.dto.response.TeacherCreateResponse;
-import com.example.chaeyeon.service.SchoolService;
+import com.example.chaeyeon.presentation.dto.request.StudentCreateRequest;
+import com.example.chaeyeon.presentation.dto.request.TeacherCreateRequest;
+import com.example.chaeyeon.presentation.dto.response.StudentCreateResponse;
+import com.example.chaeyeon.presentation.dto.response.TeacherCreateResponse;
+import com.example.chaeyeon.application.SchoolService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;

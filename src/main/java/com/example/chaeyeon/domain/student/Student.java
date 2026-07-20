@@ -1,5 +1,6 @@
-package com.example.chaeyeon.domain;
+package com.example.chaeyeon.domain.student;
 
+import com.example.chaeyeon.domain.teacher.Teacher;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
