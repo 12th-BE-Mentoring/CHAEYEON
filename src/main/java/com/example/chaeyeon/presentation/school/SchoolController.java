@@ -1,9 +1,9 @@
-package com.example.chaeyeon.presentation;
+package com.example.chaeyeon.presentation.school;
 
-import com.example.chaeyeon.presentation.dto.request.StudentCreateRequest;
-import com.example.chaeyeon.presentation.dto.request.TeacherCreateRequest;
-import com.example.chaeyeon.presentation.dto.response.StudentCreateResponse;
-import com.example.chaeyeon.presentation.dto.response.TeacherCreateResponse;
+import com.example.chaeyeon.presentation.school.dto.request.StudentCreateRequest;
+import com.example.chaeyeon.presentation.school.dto.request.TeacherCreateRequest;
+import com.example.chaeyeon.presentation.school.dto.response.StudentCreateResponse;
+import com.example.chaeyeon.presentation.school.dto.response.TeacherCreateResponse;
 import com.example.chaeyeon.application.SchoolService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
