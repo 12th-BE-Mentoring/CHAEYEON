@@ -8,6 +8,8 @@ import com.example.chaeyeon.domain.school.presentation.dto.response.StudentCreat
 import com.example.chaeyeon.domain.school.presentation.dto.response.TeacherCreateResponse;
 import com.example.chaeyeon.domain.student.domain.StudentRepository;
 import com.example.chaeyeon.domain.teacher.domain.TeacherRepository;
+import com.example.chaeyeon.domain.teacher.exception.TeacherErrorCode;
+import com.example.chaeyeon.domain.teacher.exception.TeacherException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,7 +24,7 @@ public class SchoolService {
 
     public StudentCreateResponse createStudent(StudentCreateRequest request){
         Teacher teacher = teacherRepository.findById(request.getTeacherId())
-                .orElseThrow(() -> new IllegalArgumentException("선생님을 찾을 수 없습니다."));
+                .orElseThrow(() -> new TeacherException(TeacherErrorCode.TEACHER_NOT_FOUND));
 
         Student student = new Student(request.getName(), request.getGrade(), request.getClassNumber()
         , request.getStudentNumber(), request.getPhone());
