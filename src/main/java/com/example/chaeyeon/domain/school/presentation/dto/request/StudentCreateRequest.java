@@ -1,4 +1,4 @@
-package com.example.chaeyeon.presentation.school.dto.request;
+package com.example.chaeyeon.domain.school.presentation.dto.request;
 
 import lombok.Getter;
 

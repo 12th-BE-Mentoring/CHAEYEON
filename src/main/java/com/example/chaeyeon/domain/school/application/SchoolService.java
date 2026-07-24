@@ -1,13 +1,13 @@
-package com.example.chaeyeon.application;
+package com.example.chaeyeon.domain.school.application;
 
-import com.example.chaeyeon.domain.student.Student;
-import com.example.chaeyeon.domain.teacher.Teacher;
-import com.example.chaeyeon.presentation.school.dto.request.StudentCreateRequest;
-import com.example.chaeyeon.presentation.school.dto.request.TeacherCreateRequest;
-import com.example.chaeyeon.presentation.school.dto.response.StudentCreateResponse;
-import com.example.chaeyeon.presentation.school.dto.response.TeacherCreateResponse;
-import com.example.chaeyeon.domain.student.StudentRepository;
-import com.example.chaeyeon.domain.teacher.TeacherRepository;
+import com.example.chaeyeon.domain.student.domain.Student;
+import com.example.chaeyeon.domain.teacher.domain.Teacher;
+import com.example.chaeyeon.domain.school.presentation.dto.request.StudentCreateRequest;
+import com.example.chaeyeon.domain.school.presentation.dto.request.TeacherCreateRequest;
+import com.example.chaeyeon.domain.school.presentation.dto.response.StudentCreateResponse;
+import com.example.chaeyeon.domain.school.presentation.dto.response.TeacherCreateResponse;
+import com.example.chaeyeon.domain.student.domain.StudentRepository;
+import com.example.chaeyeon.domain.teacher.domain.TeacherRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
