@@ -8,8 +8,7 @@ import com.example.chaeyeon.domain.school.presentation.dto.response.StudentCreat
 import com.example.chaeyeon.domain.school.presentation.dto.response.TeacherCreateResponse;
 import com.example.chaeyeon.domain.student.domain.StudentRepository;
 import com.example.chaeyeon.domain.teacher.domain.TeacherRepository;
-import com.example.chaeyeon.domain.teacher.exception.TeacherErrorCode;
-import com.example.chaeyeon.domain.teacher.exception.TeacherException;
+import com.example.chaeyeon.domain.teacher.exception.TeacherNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,7 +23,7 @@ public class SchoolService {
 
     public StudentCreateResponse createStudent(StudentCreateRequest request){
         Teacher teacher = teacherRepository.findById(request.getTeacherId())
-                .orElseThrow(() -> new TeacherException(TeacherErrorCode.TEACHER_NOT_FOUND));
+                .orElseThrow(() -> TeacherNotFoundException.EXCEPTION);
 
         Student student = new Student(request.getName(), request.getGrade(), request.getClassNumber()
         , request.getStudentNumber(), request.getPhone());
