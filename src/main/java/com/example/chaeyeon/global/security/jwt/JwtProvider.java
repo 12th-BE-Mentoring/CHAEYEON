@@ -1,10 +1,20 @@
 package com.example.chaeyeon.global.security.jwt;
 
+import com.example.chaeyeon.global.exception.BusinessException;
+import com.example.chaeyeon.global.exception.ErrorCode;
+import com.example.chaeyeon.global.security.auth.CustomUserDetailsService;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Date;
 
 @Component
@@ -12,12 +22,15 @@ public class JwtProvider {
 
     private final JwtProperties jwtProperties;
     private final SecretKey secretKey;
+    private final CustomUserDetailsService customUserDetailsService;
     private static final String ACCESS_TOKEN = "access";
     private static final String REFRESH_TOKEN = "refresh";
 
-    public JwtProvider(JwtProperties jwtProperties){
+    public JwtProvider(JwtProperties jwtProperties,
+                       CustomUserDetailsService customUserDetailsService){
         this.jwtProperties = jwtProperties;
         this.secretKey = Keys.hmacShaKeyFor(jwtProperties.getSecretKey().getBytes(StandardCharsets.UTF_8));
+        this.customUserDetailsService = customUserDetailsService;
     }
 
     public String generateAccessToken(String accountId){
@@ -32,7 +45,6 @@ public class JwtProvider {
     public String generateToken(String accountId, String type, Long time){
 
         Date now = new Date();
-
         return Jwts.builder()
                 .signWith(secretKey)
                 .subject(accountId)
@@ -40,5 +52,45 @@ public class JwtProvider {
                 .claim("type", type)
                 .expiration(new Date(now.getTime() + time))
                 .compact();
+    }
+
+    public Claims getClaim(String token){
+        try{
+            return Jwts.parser()
+                    .verifyWith(secretKey)
+                    .build()
+                    .parseSignedClaims(token)
+                    .getPayload();
+        } catch (JwtException | IllegalArgumentException e) {
+            throw new BusinessException(ErrorCode.TOKEN_INVALID);
+        }
+    }
+
+    public Long getUserId(String token){
+        return Long.valueOf(getClaim(token).getSubject());
+    }
+
+    public Authentication getAuthentication(String token){
+        Long id = getUserId(token);
+        UserDetails userDetails =
+                customUserDetailsService.loadUserByUsername(id.toString());
+
+        return new UsernamePasswordAuthenticationToken(
+                userDetails, null, userDetails.getAuthorities()
+        );
+    }
+
+    public void validateRefreshToken(String token){
+        String type = getClaim(token).get("type", String.class);
+
+        if (REFRESH_TOKEN.equals(type))
+            throw new BusinessException(ErrorCode.TOKEN_INVALID);
+    }
+
+    public LocalDateTime getExpiration(String token){
+        Date expiration = getClaim(token).getExpiration();
+
+        return expiration.toInstant()
+                .atZone(ZoneId.of("Asia/Seoul")).toLocalDateTime();
     }
 }

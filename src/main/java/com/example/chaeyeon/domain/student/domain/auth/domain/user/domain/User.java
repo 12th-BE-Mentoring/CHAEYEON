@@ -1,7 +1,8 @@
-package com.example.chaeyeon.domain.user.domain;
+package com.example.chaeyeon.domain.student.domain.auth.domain.user.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -23,4 +24,11 @@ public class User {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @Builder
+    public User(String username, String password){
+        this.username = username;
+        this.password = password;
+        this.role = Role.USER;
+    }
 }
