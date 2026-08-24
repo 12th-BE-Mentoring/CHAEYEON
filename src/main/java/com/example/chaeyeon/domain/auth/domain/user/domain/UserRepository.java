@@ -1,4 +1,4 @@
-package com.example.chaeyeon.domain.student.domain.auth.domain.user.domain;
+package com.example.chaeyeon.domain.auth.domain.user.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

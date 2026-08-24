@@ -1,8 +1,8 @@
-package com.example.chaeyeon.domain.student.domain.auth.service;
+package com.example.chaeyeon.domain.auth.service;
 
-import com.example.chaeyeon.domain.student.domain.auth.domain.user.domain.User;
-import com.example.chaeyeon.domain.student.domain.auth.domain.user.domain.UserRepository;
-import com.example.chaeyeon.domain.student.domain.auth.dto.SignUpRequest;
+import com.example.chaeyeon.domain.auth.domain.user.domain.User;
+import com.example.chaeyeon.domain.auth.domain.user.domain.UserRepository;
+import com.example.chaeyeon.domain.auth.dto.SignUpRequest;
 import com.example.chaeyeon.global.exception.BusinessException;
 import com.example.chaeyeon.global.exception.ErrorCode;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +20,7 @@ public class SignupService {
 
     public void signUp(SignUpRequest request) {
         if (userRepository.existsByUsername(request.username()))
-            throw new BusinessException(ErrorCode.USERNMAE_ALREDY_EXISTS);
+            throw new BusinessException(ErrorCode.USERNAME_ALREDY_EXISTS);
 
 
         User user = User.builder()

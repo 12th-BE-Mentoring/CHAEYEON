@@ -1,4 +1,4 @@
-package com.example.chaeyeon.domain.student.domain.auth.dto;
+package com.example.chaeyeon.domain.auth.dto;
 
 public record LoginRequest(
         String usernmae,

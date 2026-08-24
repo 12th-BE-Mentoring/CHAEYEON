@@ -1,9 +1,9 @@
-package com.example.chaeyeon.domain.student.domain.auth.controller;
+package com.example.chaeyeon.domain.auth.controller;
 
-import com.example.chaeyeon.domain.student.domain.auth.dto.LoginRequest;
-import com.example.chaeyeon.domain.student.domain.auth.dto.SignUpRequest;
-import com.example.chaeyeon.domain.student.domain.auth.service.LoginService;
-import com.example.chaeyeon.domain.student.domain.auth.service.SignupService;
+import com.example.chaeyeon.domain.auth.dto.LoginRequest;
+import com.example.chaeyeon.domain.auth.dto.SignUpRequest;
+import com.example.chaeyeon.domain.auth.service.LoginService;
+import com.example.chaeyeon.domain.auth.service.SignupService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

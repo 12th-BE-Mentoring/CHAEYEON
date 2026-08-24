@@ -1,7 +1,7 @@
 package com.example.chaeyeon.global.security.auth;
 
-import com.example.chaeyeon.domain.student.domain.auth.domain.user.domain.User;
-import com.example.chaeyeon.domain.student.domain.auth.domain.user.domain.UserRepository;
+import com.example.chaeyeon.domain.auth.domain.user.domain.User;
+import com.example.chaeyeon.domain.auth.domain.user.domain.UserRepository;
 import com.example.chaeyeon.global.exception.BusinessException;
 import com.example.chaeyeon.global.exception.ErrorCode;
 import lombok.RequiredArgsConstructor;

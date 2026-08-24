@@ -1,11 +1,11 @@
-package com.example.chaeyeon.domain.student.domain.auth.service;
+package com.example.chaeyeon.domain.auth.service;
 
-import com.example.chaeyeon.domain.student.domain.auth.domain.user.domain.User;
-import com.example.chaeyeon.domain.student.domain.auth.domain.user.domain.UserRepository;
-import com.example.chaeyeon.domain.student.domain.auth.domain.refreshtoken.domain.RefreshToken;
-import com.example.chaeyeon.domain.student.domain.auth.domain.refreshtoken.domain.RefreshTokenRepository;
-import com.example.chaeyeon.domain.student.domain.auth.dto.LoginRequest;
-import com.example.chaeyeon.domain.student.domain.auth.dto.TokenResponse;
+import com.example.chaeyeon.domain.auth.domain.user.domain.User;
+import com.example.chaeyeon.domain.auth.domain.user.domain.UserRepository;
+import com.example.chaeyeon.domain.auth.domain.refreshtoken.domain.RefreshToken;
+import com.example.chaeyeon.domain.auth.domain.refreshtoken.domain.RefreshTokenRepository;
+import com.example.chaeyeon.domain.auth.dto.LoginRequest;
+import com.example.chaeyeon.domain.auth.dto.TokenResponse;
 import com.example.chaeyeon.global.exception.BusinessException;
 import com.example.chaeyeon.global.exception.ErrorCode;
 import com.example.chaeyeon.global.security.jwt.JwtProvider;
