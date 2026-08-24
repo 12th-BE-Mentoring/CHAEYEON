@@ -1,7 +1,7 @@
 package com.example.chaeyeon.domain.auth.service;
 
-import com.example.chaeyeon.domain.auth.domain.user.domain.User;
-import com.example.chaeyeon.domain.auth.domain.user.domain.UserRepository;
+import com.example.chaeyeon.domain.auth.domain.user.User;
+import com.example.chaeyeon.domain.auth.domain.user.UserRepository;
 import com.example.chaeyeon.domain.auth.dto.SignUpRequest;
 import com.example.chaeyeon.global.exception.BusinessException;
 import com.example.chaeyeon.global.exception.ErrorCode;

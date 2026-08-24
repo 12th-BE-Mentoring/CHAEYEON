@@ -1,4 +1,4 @@
-package com.example.chaeyeon.domain.auth.domain.refreshtoken.domain;
+package com.example.chaeyeon.domain.auth.domain.refreshtoken;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,6 +1,6 @@
 package com.example.chaeyeon.global.security.auth;
 
-import com.example.chaeyeon.domain.auth.domain.user.domain.User;
+import com.example.chaeyeon.domain.auth.domain.user.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

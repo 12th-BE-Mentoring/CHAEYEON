@@ -1,7 +1,7 @@
 package com.example.chaeyeon.domain.auth.service;
 
-import com.example.chaeyeon.domain.auth.domain.refreshtoken.domain.RefreshToken;
-import com.example.chaeyeon.domain.auth.domain.refreshtoken.domain.RefreshTokenRepository;
+import com.example.chaeyeon.domain.auth.domain.refreshtoken.RefreshToken;
+import com.example.chaeyeon.domain.auth.domain.refreshtoken.RefreshTokenRepository;
 import com.example.chaeyeon.domain.auth.dto.ReissueRequest;
 import com.example.chaeyeon.domain.auth.dto.TokenResponse;
 import com.example.chaeyeon.global.exception.BusinessException;
