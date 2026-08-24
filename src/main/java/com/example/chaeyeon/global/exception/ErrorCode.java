@@ -15,7 +15,7 @@ public enum ErrorCode {
 
     TOKEN_INVALID(HttpStatus.UNAUTHORIZED, "유효하지 않은 요청입니다."),
 
-    USERNMAE_ALREDY_EXISTS(HttpStatus.CONFLICT,"이미 존재하는 사용자 이름 입니다."),
+    USERNAME_ALREDY_EXISTS(HttpStatus.CONFLICT,"이미 존재하는 사용자 이름 입니다."),
 
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "서버 내부 오류가 발생했습니다.");
 
